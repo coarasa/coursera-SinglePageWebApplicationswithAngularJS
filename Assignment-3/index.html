@@ -28,7 +28,7 @@
 
     <!-- found-items should be implemented as a component -->
     <found-items found="ctrl.found" remove="ctrl.removeItem(index)"></found-items>
-    <div class="emptyMessage" ng-if="(ctrl.showEmptyMessage)">Nothing found</div>
+    <div class="emptyMessage" ng-if="((ctrl.showEmptyMessage)&&(!ctrl.found.length))">Nothing found</div>
 
   </div>
 

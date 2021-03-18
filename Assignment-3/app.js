@@ -25,11 +25,7 @@ function NarrowItDownController(MenuSearchService) {
 
        promise.then(function (response) {
          ctrl.found = response;
-         if(!ctrl.found.length){
-           ctrl.showEmptyMessage = true
-         }else{
-           ctrl.showEmptyMessage = false
-         }
+         ctrl.showEmptyMessage = true
        })
        .catch(function (error) {
          console.log(error);
@@ -39,6 +35,8 @@ function NarrowItDownController(MenuSearchService) {
 
    ctrl.removeItem = function (index) {
      ctrl.found.splice(index,1);
+     // console.log(ctrl.found.length)
+     // console.log(ctrl.showEmptyMessage)
   };
 
 }
