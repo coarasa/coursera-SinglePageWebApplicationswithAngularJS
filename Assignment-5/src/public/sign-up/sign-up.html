@@ -1,0 +1,72 @@
+<div class="container">
+  <h2>Signing Up will not deceive you!<h2>
+    <fieldset>
+      <legend style="color:white">Please Provide the following information</legend>
+      <form name='signform' novalidate>
+        <div>
+          <input type="text" name="firstname" placeholder="First Name"
+            ng-model="signUpCtrl.firstname"
+            required
+            ng-minlength="1"
+            ng-maxlength="30" style="color:black">
+          <span class="error" ng-if="((signform.firstname.$error.minlength || signform.firstname.$error.required) && signform.firstname.$touched)">
+            Firstname must be at least 1 character long
+          </span>
+          <span class="error" ng-if="(signform.firstname.$error.maxlength && signform.firstname.$touched)">
+            Firstname must not be longer than 30 characters
+          </span>
+        </div>
+        <br>
+        <div>
+          <input type="text" name="lastname" placeholder="Last Name"
+            ng-model="signUpCtrl.lastname"
+            required
+            ng-minlength="1"
+            ng-maxlength="30" style="color:black">
+          <span class="error" ng-if="((signform.lastname.$error.minlength || signform.lastname.$error.required) && signform.lastname.$touched)">
+            Lastname must be at least 1 character long
+          </span>
+          <span class="error" ng-if="(signform.lastname.$error.maxlength && signform.lastname.$touched)">
+            Lastname must not be longer than 30 characters
+          </span>
+        </div>
+        <br>
+        <div>
+          <input type="email" name="email" placeholder="Email"
+            ng-model="signUpCtrl.email"
+            required style="color:black">
+          <span class="error" ng-if="signform.email.$invalid && signform.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+        </div>
+        <br>
+        <div>
+          <input type="text" name="shortname" placeholder="Your favorite dish (shortname)"
+            ng-model="signUpCtrl.shortname"
+            required
+            ng-minlength="1"
+            ng-maxlength="30" style="color:black">
+          <span class="error" ng-if="((signform.shortname.$error.minlength || signform.shortname.$error.required) && signform.shortname.$touched)">
+            The shortname of your favorite dish must be at least 1 character long
+          </span>
+          <span class="error" ng-if="(signform.shortname.$error.maxlength && signform.shortname.$touched)">
+            The shortname of your favorite dish must not be longer than 30 characters
+          </span>
+          <span class="error" ng-if="((!signUpCtrl.isShortnameValid())&&signUpCtrl.shortname_checked)">
+            No such menu number exists
+          </span>
+        </div>
+        <br>
+        <div>
+          <button
+            ng-disabled="signform.$invalid"
+            ng-click="signUpCtrl.submit()" style="color:black">Submit</button>
+        </div>
+        <br>
+        <span class="error" ng-if="(signUpCtrl.informationSaved())">
+          Your information has been saved. Check it <a ui-sref="public.my-info">here</a>
+        </span>
+    </form>
+    </fieldset>
+
+</div>
