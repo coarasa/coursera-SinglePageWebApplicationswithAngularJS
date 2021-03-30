@@ -41,6 +41,15 @@
         </div>
         <br>
         <div>
+          <input type="text" name="phone" placeholder="Phone ###-###-####"
+            ng-model="signUpCtrl.phone"
+            pattern="(\d{3})-(\d{3})-(\d{4})" style="color:black">
+          <span ng-if="signform.phone.$invalid && signform.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+        </div>
+        <br>
+        <div>
           <input type="text" name="shortname" placeholder="Your favorite dish (shortname)"
             ng-model="signUpCtrl.shortname"
             required

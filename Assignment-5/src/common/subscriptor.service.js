@@ -10,6 +10,7 @@ function SubscriptorService($http, ApiPath) {
   subscriptor.firstname = "";
   subscriptor.lastname = "";
   subscriptor.email = "";
+  subscriptor.phone = "";
   subscriptor.shortname = "";
   subscriptor.name = "";
   subscriptor.description = "";
@@ -25,7 +26,7 @@ function SubscriptorService($http, ApiPath) {
     return informationSaved;
   };
 
-  subscriptor.validate = function(shortName, firstname, lastname, email)
+  subscriptor.validate = function(shortName, firstname, lastname, email, phone)
   {
     var promise = $http({
       method: "GET",
@@ -41,6 +42,7 @@ function SubscriptorService($http, ApiPath) {
          subscriptor.firstname = firstname;
          subscriptor.lastname = lastname;
          subscriptor.email = email;
+         subscriptor.phone = phone;
          subscriptor.shortname = shortName;
          subscriptor.name = response.data.name;
          subscriptor.description = response.data.description;

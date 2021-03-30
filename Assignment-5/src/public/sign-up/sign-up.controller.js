@@ -12,9 +12,10 @@ function SignUpController(SubscriptorService) {
   $ctrl.firstname = "";
   $ctrl.lastname = "";
   $ctrl.email = "";
+  $ctrl.phone = "";
   $ctrl.shortname = "";
   $ctrl.submit = function () {
-    SubscriptorService.validate($ctrl.shortname, $ctrl.firstname, $ctrl.lastname, $ctrl.email);
+    SubscriptorService.validate($ctrl.shortname, $ctrl.firstname, $ctrl.lastname, $ctrl.email, $ctrl.phone);
     $ctrl.shortname_checked = true;
   };
   $ctrl.informationSaved = SubscriptorService.isInformationSaved;

@@ -11,6 +11,7 @@ function MyInfoController(SubscriptorService, ApiPath) {
   $ctrl.firstname = SubscriptorService.firstname;
   $ctrl.lastname = SubscriptorService.lastname;
   $ctrl.email = SubscriptorService.email;
+  $ctrl.phone = SubscriptorService.phone;
   $ctrl.shortname = SubscriptorService.shortname;
   $ctrl.name = SubscriptorService.name;
   $ctrl.description = SubscriptorService.description;
